@@ -1,6 +1,8 @@
 const recipeList = document.getElementById("recipe-list");
 const searchBar = document.querySelector(".search-bar");
 const filterButtons = document.querySelectorAll(".filter-button");
+const holidayButton = document.querySelector(".holiday-button");
+const holidayMenu = document.querySelector(".holiday-menu");
 
 let allRecipes = [];
 let activeFilter = "all";
@@ -166,6 +168,15 @@ recipeList.addEventListener("click", async function (event) {
 async function initializePage() {
   await loadRecipes();
   await checkLoginStatus();
+}
+if (holidayButton && holidayMenu) {
+  holidayButton.addEventListener("click", function () {
+    if (holidayMenu.style.display === "block") {
+      holidayMenu.style.display = "none";
+    } else {
+      holidayMenu.style.display = "block";
+    }
+  });
 }
 
 initializePage();
