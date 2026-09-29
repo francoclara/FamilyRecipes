@@ -26,7 +26,13 @@ form.addEventListener("submit", async function (event) {
     .trim();
 
   const type = document.getElementById("type-input").value;
-  const holiday = document.getElementById("holiday-input").value;
+  const checkedHolidays = document.querySelectorAll(
+    '.holiday-checkboxes input[type="checkbox"]:checked'
+  );
+  const holidays = [];
+  checkedHolidays.forEach(function (checkbox) {
+    holidays.push(checkbox.value);
+  });
 
   const prepTime = document
     .getElementById("prep-time-input")
@@ -133,7 +139,7 @@ form.addEventListener("submit", async function (event) {
         description: description || null,
         type: type,
         tags: tags,
-        holiday: holiday || null,
+        holidays: holidays,
         prep_time: prepTime || null,
         rest_time: restTime || null,
         cook_time: cookTime || null,

@@ -55,12 +55,12 @@ function displayRecipes() {
     const tags = [
       recipe.type,
       ...(recipe.tags || []),
-      recipe.holiday
+      ...(recipe.holidays || [])
     ]
-      .filter(Boolean)
-      .map(function (tag) {
-        return tag.toLowerCase();
-      });
+    .filter(Boolean)
+    .map(function (tag) {
+      return tag.toLowerCase();
+    });
 
     const matchesSearch = name.includes(searchText);
 
@@ -85,7 +85,7 @@ function displayRecipes() {
     const tags = [
       recipe.type,
       ...(recipe.tags || []),
-      recipe.holiday
+      ...(recipe.holidays || [])
     ].filter(Boolean);
 
     card.innerHTML = `

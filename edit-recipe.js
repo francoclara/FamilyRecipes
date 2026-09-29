@@ -56,9 +56,6 @@ async function loadRecipe() {
   document.getElementById("type-input").value =
     recipe.type || "";
 
-  document.getElementById("holiday-input").value =
-    recipe.holiday || "";
-
   document.getElementById("prep-time-input").value =
     recipe.prep_time || "";
 
@@ -87,8 +84,14 @@ async function loadRecipe() {
     .forEach(function (checkbox) {
       checkbox.checked = checkedTags.includes(checkbox.value);
     });
-}
+const selectedHolidays = recipe.holidays || [];
 
+  document
+    .querySelectorAll('.holiday-checkboxes input[type="checkbox"]')
+    .forEach(function (checkbox) {
+      checkbox.checked = selectedHolidays.includes(checkbox.value);
+    });
+}
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
@@ -103,7 +106,6 @@ form.addEventListener("submit", async function (event) {
     .trim();
 
   const type = document.getElementById("type-input").value;
-  const holiday = document.getElementById("holiday-input").value;
 
   const prepTime = document
     .getElementById("prep-time-input")
@@ -161,6 +163,15 @@ form.addEventListener("submit", async function (event) {
   checkedCategories.forEach(function (checkbox) {
     tags.push(checkbox.value);
   });
+  const checkedHolidays = document.querySelectorAll(
+    '.holiday-checkboxes input[type="checkbox"]:checked'
+  );
+
+  const holidays = [];
+
+  checkedHolidays.forEach(function (checkbox) {
+    holidays.push(checkbox.value);
+  });
 
   let imageUrl = currentImageUrl;
   const imageInput = document.getElementById("image-input");
@@ -204,7 +215,7 @@ form.addEventListener("submit", async function (event) {
       description: description || null,
       type: type,
       tags: tags,
-      holiday: holiday || null,
+      holidays: holidays,
       prep_time: prepTime || null,
       rest_time: restTime || null,
       cook_time: cookTime || null,

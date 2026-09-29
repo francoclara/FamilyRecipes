@@ -552,3 +552,18 @@ h1 {
 .remove-image-option input {
   width: auto;
 }
+.holiday-checkboxes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.holiday-checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.holiday-checkboxes input {
+  width: auto;
+}

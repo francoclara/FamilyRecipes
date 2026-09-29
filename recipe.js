@@ -38,9 +38,9 @@ async function loadRecipe() {
     tags.push(...recipe.tags);
   }
 
-  if (recipe.holiday) {
-    tags.push(recipe.holiday);
-  }
+  if (recipe.holidays) {
+  tags.push(...recipe.holidays);
+}
 
   document.getElementById("recipe-tags").textContent = tags.join(" • ");
 
