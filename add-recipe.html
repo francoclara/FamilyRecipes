@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter une recette</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="add-recipe-page">
+
+    <a href="recipes.html" class="back-link">← Retour aux recettes</a>
+    
+    <button id="logout-button" class="logout-button">
+        Se déconnecter
+    </button>
+
+    <h1>Ajouter une recette</h1>
+
+    <form class="recipe-form">
+
+      <label>Nom de la recette</label>
+      <input type="text" id="recipe-name-input" required>
+
+      <label>Description</label>
+      <textarea id="description-input"></textarea>
+
+      <label>Photo</label>
+      <input type="file" id="image-input" accept="image/*">
+
+      <label>Type</label>
+      <select id="type-input" required>
+        <option value="">Choisir</option>
+        <option value="Halavi">Halavi</option>
+        <option value="Bassari">Bassari</option>
+        <option value="Parve">Parve</option>
+      </select>
+
+      <label>Catégories</label>
+
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" value="Sucré">
+          Sucré
+        </label>
+
+        <label>
+          <input type="checkbox" value="Salé">
+          Salé
+        </label>
+
+        <label>
+          <input type="checkbox" value="Healthy">
+          Healthy
+        </label>
+
+        <label>
+          <input type="checkbox" value="Hagim">
+          Hagim
+        </label>
+      </div>
+
+      <label>Fête</label>
+      <select id="holiday-input">
+        <option value="">Aucune</option>
+        <option value="Pessah">Pessah</option>
+        <option value="Rosh Hashana">Rosh Hashana</option>
+        <option value="Souccot">Souccot</option>
+        <option value="Hanoucca">Hanoucca</option>
+        <option value="Pourim">Pourim</option>
+        <option value="Chavouot">Chavouot</option>
+      </select>
+
+      <label>Temps de préparation</label>
+      <input type="text" id="prep-time-input" placeholder="Ex: 15 min">
+
+      <label>Temps de repos</label>
+      <input type="text" id="rest-time-input" placeholder="Ex: 30 min">
+
+      <label>Temps de cuisson</label>
+      <input type="text" id="cook-time-input" placeholder="Ex: 25 min">
+
+      <label>Mode de cuisson</label>
+      <input type="text" id="cooking-mode-input" placeholder="Ex: Four 180°C / Cookeo">
+
+      <label>Ingrédients</label>
+      <textarea id="ingredients-input" placeholder="Un ingrédient par ligne"></textarea>
+
+      <label>Préparation</label>
+      <textarea id="instructions-input" placeholder="Une étape par ligne"></textarea>
+
+      <label>Astuce de famille</label>
+      <textarea id="family-note-input"></textarea>
+
+      <button type="submit" class="submit-recipe-button">
+        Ajouter la recette
+      </button>
+
+    </form>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="add-recipe.js"></script>
+
+</body>
+</html>

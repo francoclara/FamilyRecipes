@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nos recettes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="recipes-page">
+
+    <h1 class="recipes-title">Nos recettes</h1>
+
+    <a href="add-recipe.html" class="add-recipe-link" id="add-recipe-link">
+      + Ajouter une recette
+    </a>
+
+    <a href="login.html" class="login-link" id="login-link">
+        Connexion admin
+    </a>
+
+    <button id="logout-button" class="logout-button">
+        Se déconnecter
+    </button>
+
+    <input
+      class="search-bar"
+      type="search"
+      placeholder="Rechercher une recette..."
+    >
+
+    <div class="filters">
+
+      <button class="filter-button" data-filter="all">
+        Tout afficher
+      </button>
+
+      <button class="filter-button" data-filter="halavi">
+        Halavi
+      </button>
+
+      <button class="filter-button" data-filter="bassari">
+        Bassari
+      </button>
+
+      <button class="filter-button" data-filter="parve">
+        Parve
+      </button>
+
+      <button class="filter-button" data-filter="healthy">
+        Healthy
+      </button>
+
+      <button class="filter-button" data-filter="sucré">
+        Sucré
+      </button>
+
+      <button class="filter-button" data-filter="salé">
+        Salé
+      </button>
+
+      <div class="holiday-filter">
+
+        <button class="holiday-button">
+          Hagim ▾
+        </button>
+
+        <div class="holiday-menu">
+
+          <button class="filter-button" data-filter="pessah">
+            Pessah
+          </button>
+
+          <button class="filter-button" data-filter="rosh hashana">
+            Rosh Hashana
+          </button>
+
+          <button class="filter-button" data-filter="souccot">
+            Souccot
+          </button>
+
+          <button class="filter-button" data-filter="hanoucca">
+            Hanoucca
+          </button>
+
+          <button class="filter-button" data-filter="pourim">
+            Pourim
+          </button>
+
+          <button class="filter-button" data-filter="chavouot">
+            Chavouot
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <section class="recipe-list" id="recipe-list">
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

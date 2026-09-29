@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recette</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="recipe-page">
+
+    <a href="recipes.html" class="back-link">← Retour aux recettes</a>
+
+    <section class="recipe-hero">
+
+      <div class="recipe-image" id="recipe-image-container">
+        <img id="recipe-image" src="" alt="">
+      </div>
+
+      <div class="recipe-header">
+        <p class="recipe-emoji" id="recipe-emoji"></p>
+
+        <h1 id="recipe-name"></h1>
+
+        <p class="recipe-tags" id="recipe-tags"></p>
+
+        <p class="recipe-description" id="recipe-description"></p>
+
+        <div class="recipe-info" id="recipe-info"></div>
+      </div>
+
+    </section>
+
+    <section class="recipe-details">
+
+      <div class="recipe-column">
+        <h2>🥣 Ingrédients</h2>
+        <ul id="recipe-ingredients"></ul>
+      </div>
+
+      <div class="recipe-column">
+        <h2>👩‍🍳 Préparation</h2>
+        <ol id="recipe-instructions"></ol>
+      </div>
+
+    </section>
+
+    <section class="family-note">
+      <h3>♡ Astuce de famille</h3>
+      <p id="recipe-family-note"></p>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase.js"></script>
+  <script src="recipe.js"></script>
+</body>
+</html>
